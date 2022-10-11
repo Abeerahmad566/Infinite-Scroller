@@ -7,7 +7,7 @@ function App() {
   const [pokemon, setPokemon] = useState([]);
   const loadmorePokemon = () => {
     axios
-      .get('https://pokeapi.co/api/v2/pokemon?limit=20.')
+      .get(`https://pokeapi.co/api/v2/pokemon?limit=20&${offset}`)
       .then(({ data }) => {
         const newPokemon = [];
         data.results.forEach((p) => newPokemon.push(p.name));
